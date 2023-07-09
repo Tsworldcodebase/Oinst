@@ -9,3 +9,11 @@ yum install -y https://downloads.druva.com/downloads/Phoenix/Linux/druva-phoenix
 mkdir -p /u01/app/oracle/product/19.0.0/dbhome_1
 chown -R oracle:oinstall /u01/app/oracle/product/19.0.0/dbhome_1
 chmod -R 775 /u01/app/oracle
+su oracle 
+echo 'ORACLE_BASE=/u01/app/oracle /
+ORACLE_HOME=$ORACLE_BASE/product/19.0.0/db_home_1 /
+ORACLE_SID= TSWAWSORA /
+PATH=$PATH:$ORACLE_HOME/bin:$HOME/bin /
+LD_LIBRARY_PATH=$ORACLE_HOME/lib /
+export ORACLE_BASE ORACLE_HOME ORACLE_SID PATH LD_LIBRARY_PATH' /
+>> ~/.bash_profile
