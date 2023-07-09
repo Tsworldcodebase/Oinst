@@ -5,6 +5,7 @@ subscription-manager register --username []--password []
 yum -y update & wait $!
 yum -y upgrade & wait $!
 yum -y install https://yum.oracle.com/repo/OracleLinux/OL8/appstream/x86_64/getPackage/oracle-database-preinstall-19c-1.0-2.el8.x86_64.rpm & wait $!
-yum localinstall -y /tmp/oracle/oracle-database-ee-19c-1.0-1.x86_64\(1\).rpm & wait $!
 yum install -y https://downloads.druva.com/downloads/Phoenix/Linux/druva-phoenix-oracle-client-6.1.1-328698.x86_64.rpm && /etc/init.d/oracledb_ORCLCDB-19c configure
-~                          
+mkdir -p /u01/app/oracle/product/19.0.0/dbhome_1
+chown -R oracle:oinstall /u01/app/oracle/product/19.0.0/dbhome_1
+chmod -R 775 /u01/app/oracle
